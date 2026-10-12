@@ -27,9 +27,7 @@ export class Pacient {
     
     this.nom = nom;
     this.cognoms = cognoms;
-    this.dataNaixement = dataNaixement instanceof Date
-      ? dataNaixement
-      : parsejarData(dataNaixement);
+    this.dataNaixement = data;
     this.bascula = bascula;
   }
 

@@ -28,7 +28,7 @@ describe('Bascula — proves unitàries', function () {
     });
 
     it('ha de tornar un missatge que encara no ha utilitzat la bascula', function () {
-      expect(bascula.obtenirEvolucio()).to.equal("Bascula recent creada");
+      expect(bascula.obtenirEvolucio()).to.equal();
     });
 
   });
@@ -70,8 +70,15 @@ describe('Bascula — proves unitàries', function () {
       expect(bascula.obtenirPesMitja()).to.be.closeTo(90.3, 0.01);
     });
 
-    it('ha de tornar un missatge que diga la cuantitat de pes que ha perdut', function () {
-      expect(bascula.obtenirEvolucio()).to.be.a('number');
+    it('retorna la diferència entre l\'última i la primera pesada', function () {
+      expect(bascula.obtenirEvolucio()).to.equal(6);
+    });
+
+    it('retorna un valor negatiu si el pes ha disminuït', function () {
+      const b = new Bascula();
+      b.anotarPes(90);
+      b.anotarPes(85);
+      expect(b.obtenirEvolucio()).to.equal(-5);
     });
   });
 

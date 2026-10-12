@@ -45,7 +45,7 @@ export class Bascula {
     if (imc < 16) return 'Infrapès (primesa severa)';
     if (imc < 17) return 'Infrapès (primesa moderada)';
     if (imc < 18.5) return 'Infrapès (primesa acceptable)';
-    if (imc <= 25) return 'Pes normal';
+    if (imc < 25) return 'Pes normal';
     if (imc < 30) return 'Sobrepès';
     if (imc < 35) return 'Obesitat (tipus I)';
     if (imc < 40) return 'Obesitat (tipus II)';
@@ -69,6 +69,6 @@ export class Bascula {
     let primerPes = this.#anotacions[0];
     let ultimPes = this.#anotacions[this.#anotacions.length]
 
-    return primerPes - ultimPes;
+    return ultimPes - primerPes;
   }
 }
