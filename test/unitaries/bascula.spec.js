@@ -27,8 +27,8 @@ describe('Bascula — proves unitàries', function () {
       expect(bascula.obtenirTaulaPesosHTML()).to.include('<table>');
     });
 
-    it('ha de tornar un missatge que encara no ha utilitzat la bascula', function () {
-      expect(bascula.obtenirEvolucio()).to.equal();
+    it('retorna 0 si només hi ha una pesada', function () {
+      expect(bascula.obtenirEvolucio()).to.equal(0);
     });
 
   });

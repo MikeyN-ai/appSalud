@@ -63,12 +63,10 @@ export class Bascula {
   //Funció obtenir tota la evolució d'un pacient
 
   obtenirEvolucio() {
-    if (this.#anotacions.length === 0) return "Bascula recent creada";
-    if (this.#anotacions.length === 1) return 0;
-
-    let primerPes = this.#anotacions[0];
-    let ultimPes = this.#anotacions[this.#anotacions.length]
-
-    return ultimPes - primerPes;
+    if (this.#anotacions.length < 2) return 0;
+    const primer = this.#anotacions[0].pes;
+    const ultim = this.#anotacions.at(-1).pes;
+    
+    return ultim - primer;
   }
 }
